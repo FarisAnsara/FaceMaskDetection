@@ -2,6 +2,7 @@ import tensorflow as tf
 import numpy as np
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import os
+from PIL import Image, UnidentifiedImageError
 
 class MaskDetector:
     def __init__(self, model_path='mask_detector_model.h5'):
@@ -45,7 +46,13 @@ class MaskDetector:
         """
         if not self.model:
             raise ValueError("Model is not loaded. Use `load_model` to load a model first.")
-        
+        if not os.path.exists(image_path):
+            raise FileNotFoundError(f"The file '{image_path}' does not exist.")
+        try:
+            Image.open(image_path).verify()
+        except UnidentifiedImageError:
+            raise ValueError(f"The file '{image_path}' is not a valid image file.")
+
         processed_image = self.preprocess_image(image_path)
         prediction = self.model.predict(processed_image)[0][0]
         return "Without Mask" if prediction > 0.5 else "With Mask"
