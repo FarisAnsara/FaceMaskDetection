@@ -49,13 +49,3 @@ class MaskDetector:
         processed_image = self.preprocess_image(image_path)
         prediction = self.model.predict(processed_image)[0][0]
         return "Without Mask" if prediction > 0.5 else "With Mask"
-
-
-detector = MaskDetector()
-
-# Valid image path
-result = detector.predict(r'C:\Users\ACER\OneDrive\Pictures\picture_with_id.jpeg')
-print(f"Prediction: {result}")
-
-# result = detector.predict('invalid_image.jpg')
-# print(result)
