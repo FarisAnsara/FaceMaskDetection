@@ -11,16 +11,9 @@ def main():
         default=os.path.join('FaceMaskDataSet', 'test_image', 'with_mask_5.jpg'),
         help="Path to the input image."
     )
-
-    parser.add_argument(
-        "--model_path",
-        type=str,
-        default="mask_detector_model.h5",
-        help="Path to the trained model file. Default is 'mask_detector_model.h5'."
-    )
-
+    
     args = parser.parse_args()
-    detector = MaskDetector(model_path=args.model_path)
+    detector = MaskDetector(model_path="mask_detector_model.h5")
 
     try:
         result = detector.predict(args.image_path)
