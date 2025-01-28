@@ -30,8 +30,6 @@ class MaskDetector:
         :param target_size: Target size for resizing the image.
         :return: Preprocessed image as a NumPy array.
         """
-        if not os.path.exists(image_path):
-            raise FileNotFoundError(f"Image file not found at: {image_path}")
         image = load_img(image_path, target_size=target_size)
         image_array = img_to_array(image)
         image_array = image_array / 255.0
