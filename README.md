@@ -13,13 +13,16 @@ The dataset used for this project includes images of faces categorized into two 
 The dataset should be placed under the `FaceMaskDataSet` directory.
 
 ## Requirements
+**Python Version**
+  - This has been **trained and tested** on Python  **3.11.3**.
+  - Ensure you have Python 3.11 or higher installed for optimal compatibility.
+
 To install the required dependencies, run:
 ```bash
 pip install -r requirements.txt
 ```
 
 **Dependencies:**
-- Python == 3.11.3
 - `numpy==1.26.4`
 - `pandas==2.1.2`
 - `matplotlib==3.9.1`
@@ -62,7 +65,6 @@ cd FaceMaskDetection
      python main.py
      ```
      - Default input image: `FaceMaskDataSet/test_image/with_mask_5.jpg`
-     - Default model: `mask_detector_model.h5`
 
 ---
 
