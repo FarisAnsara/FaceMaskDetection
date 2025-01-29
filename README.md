@@ -6,7 +6,7 @@ This project implements a face mask detection algorithm that identifies whether 
 ---
 
 ## Dataset
-The dataset used for this project can be found on [Kaggle](https://www.kaggle.com/datasets/omkargurav/face-mask-dataset.
+The dataset used for this project can be found on [Kaggle](https://www.kaggle.com/datasets/omkargurav/face-mask-dataset.)
 - **Dataset location**: Place the downloaded ZIP file in the `FaceMaskDataSet` directory.
 - **Extraction**: Use the provided Python script to extract the dataset contents.
 ```python
